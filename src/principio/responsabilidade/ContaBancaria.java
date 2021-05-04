@@ -7,12 +7,6 @@ public class ContaBancaria {
 	 * 1= O objeto tem que fazer o processamento dentro dele proprio desde que tudo
 	 * que ele precisa esteja nele próprio
 	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
 	 */
 	private String descricao;
 	private double saldo = 8000;
