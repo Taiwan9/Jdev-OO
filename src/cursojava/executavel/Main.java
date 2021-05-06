@@ -6,8 +6,10 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import cursojava.classeAuxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
 import cusrsojava.classes.Aluno;
+import cusrsojava.classes.Diretor;
 import cusrsojava.classes.Disciplina;
 
 public class Main {
@@ -18,8 +20,11 @@ public class Main {
 		String login =JOptionPane.showInputDialog("LOGIN: ");
 		String senha =JOptionPane.showInputDialog("SENHA: ");
 		
-		if(login.equalsIgnoreCase("admin") &&
-				senha.equalsIgnoreCase("admin")) {
+		//Secretario secretario = new Secretary(); //Diretamente com o objeto
+		
+		
+		//só travar o contrato para autorizar somente quem realmente tem o  contrato 100% legitimio
+		if(new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) { /*se TRUE acessa se FALSE nao acessa*/
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 		//é uma lista que dentro dela temos uma chave que identifica uma sequência de valores também
@@ -165,6 +170,9 @@ public class Main {
 		 * }
 		 */
 
+		}
+		else {
+			JOptionPane.showConfirmDialog(null, "ACESSO INVALIDO!");
 		}
 		}
 

@@ -6,14 +6,8 @@ import java.util.List;
 import cursojava.constantes.StatusAluno;
 
 /* Esta é uma classe/objeto que representa o Aluno*/
-public class Aluno {
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String nomeMae;
-	private String nomePai;
+public class Aluno extends Pessoa {
+
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
@@ -184,6 +178,17 @@ public class Aluno {
 		} else if (!nome.equals(other.nome))
 			return false;
 		return true;
+	}
+	@Override /*Identifica Metodo sobreescrito*/
+	public boolean pessoaMaiorIdade() {
+		// TODO Auto-generated method stub
+		return idade>=21;
+	}
+
+	@Override
+	public double salario() {
+		
+		return 1500;
 	}
 
 }
